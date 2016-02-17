@@ -35,7 +35,7 @@ namespace Hpdi.Vss2Git
         private readonly IFormatProvider formatProvider;
 
         public Logger(string filename)
-            : this(new FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.Read))
+            : this(new FileStream(filename, FileMode.Append, FileAccess.Write, FileShare.Read))
         {
         }
 

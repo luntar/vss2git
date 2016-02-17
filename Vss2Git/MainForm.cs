@@ -41,6 +41,11 @@ namespace Hpdi.Vss2Git
 
         private void OpenLog(string filename)
         {
+            if(Logger.Null != logger)
+            {
+                logger.Dispose();
+            }
+
             logger = string.IsNullOrEmpty(filename) ? Logger.Null : new Logger(filename);
         }
 
@@ -130,12 +135,22 @@ namespace Hpdi.Vss2Git
             catch (Exception ex)
             {
                 ShowException(ex);
+
+                logger.Dispose();
+                logger = Logger.Null;
             }
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            workQueue.Abort();
+            if (workQueue.IsIdle)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                workQueue.Abort();
+            }
         }
 
         private void statusTimer_Tick(object sender, EventArgs e)
