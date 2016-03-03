@@ -14,6 +14,7 @@
  */
 
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
@@ -71,6 +72,7 @@ namespace Hpdi.Vss2Git
                 logger.WriteLine("Comment transcoding: {0}",
                     transcodeCheckBox.Checked ? "enabled" : "disabled");
 
+
                 var df = new VssDatabaseFactory(vssDirTextBox.Text);
                 df.Encoding = encoding;
                 var db = df.Open();
@@ -110,8 +112,17 @@ namespace Hpdi.Vss2Git
 
                 if (!string.IsNullOrEmpty(outDirTextBox.Text))
                 {
+                    DirectoryInfo dir = new DirectoryInfo(outDirTextBox.Text);
+                    if (dir.Exists)
+                    {
+                            MessageBox.Show("Output directory must not exist.", "Output Directory Exists",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                    }
+
+                    DirectoryInfo di = Directory.CreateDirectory(outDirTextBox.Text);
+
                     var gitExporter = new GitExporter(workQueue, logger,
-                        revisionAnalyzer, changesetBuilder);
+                    revisionAnalyzer, changesetBuilder);
                     if (!string.IsNullOrEmpty(domainTextBox.Text))
                     {
                         gitExporter.EmailDomain = domainTextBox.Text;
@@ -261,6 +272,55 @@ namespace Hpdi.Vss2Git
             settings.AnyCommentSeconds = (int)anyCommentUpDown.Value;
             settings.SameCommentSeconds = (int)sameCommentUpDown.Value;
             settings.Save();
+        }
+
+        private void vssDirLabel_DoubleClick(object sender, EventArgs e)
+        {
+            
+            System.Diagnostics.Process.Start("file://" + vssDirTextBox.Text);
+        }
+
+        private void outDirLabel_DoubleClick(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("file://" + outDirTextBox.Text);
+        }
+
+        private static void directoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
+        {
+            // Get the subdirectories for the specified directory.
+            DirectoryInfo dir = new DirectoryInfo(sourceDirName);
+
+            if (!dir.Exists)
+            {
+                throw new DirectoryNotFoundException(
+                    "Source directory does not exist or could not be found: "
+                    + sourceDirName);
+            }
+
+            DirectoryInfo[] dirs = dir.GetDirectories();
+            // If the destination directory doesn't exist, create it.
+            if (!Directory.Exists(destDirName))
+            {
+                Directory.CreateDirectory(destDirName);
+            }
+
+            // Get the files in the directory and copy them to the new location.
+            FileInfo[] files = dir.GetFiles();
+            foreach (FileInfo file in files)
+            {
+                string temppath = Path.Combine(destDirName, file.Name);
+                file.CopyTo(temppath, false);
+            }
+
+            // If copying subdirectories, copy them and their contents to new location.
+            if (copySubDirs)
+            {
+                foreach (DirectoryInfo subdir in dirs)
+                {
+                    string temppath = Path.Combine(destDirName, subdir.Name);
+                    directoryCopy(subdir.FullName, temppath, copySubDirs);
+                }
+            }
         }
     }
 }

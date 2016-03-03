@@ -74,8 +74,8 @@
             // 
             // vssGroupBox
             // 
-            this.vssGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.vssGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.vssGroupBox.Controls.Add(this.encodingLabel);
             this.vssGroupBox.Controls.Add(this.encodingComboBox);
             this.vssGroupBox.Controls.Add(this.excludeTextBox);
@@ -102,8 +102,8 @@
             // 
             // encodingComboBox
             // 
-            this.encodingComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.encodingComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.encodingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.encodingComboBox.FormattingEnabled = true;
             this.encodingComboBox.Location = new System.Drawing.Point(81, 97);
@@ -113,8 +113,8 @@
             // 
             // excludeTextBox
             // 
-            this.excludeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.excludeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.excludeTextBox.Location = new System.Drawing.Point(81, 71);
             this.excludeTextBox.Name = "excludeTextBox";
             this.excludeTextBox.Size = new System.Drawing.Size(473, 20);
@@ -131,8 +131,8 @@
             // 
             // vssProjectTextBox
             // 
-            this.vssProjectTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.vssProjectTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.vssProjectTextBox.Location = new System.Drawing.Point(81, 45);
             this.vssProjectTextBox.Name = "vssProjectTextBox";
             this.vssProjectTextBox.Size = new System.Drawing.Size(473, 20);
@@ -140,8 +140,8 @@
             // 
             // vssDirTextBox
             // 
-            this.vssDirTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.vssDirTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.vssDirTextBox.Location = new System.Drawing.Point(81, 19);
             this.vssDirTextBox.Name = "vssDirTextBox";
             this.vssDirTextBox.Size = new System.Drawing.Size(473, 20);
@@ -159,11 +159,13 @@
             // vssDirLabel
             // 
             this.vssDirLabel.AutoSize = true;
+            this.vssDirLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.vssDirLabel.Location = new System.Drawing.Point(6, 22);
             this.vssDirLabel.Name = "vssDirLabel";
             this.vssDirLabel.Size = new System.Drawing.Size(49, 13);
             this.vssDirLabel.TabIndex = 0;
             this.vssDirLabel.Text = "Directory";
+            this.vssDirLabel.DoubleClick += new System.EventHandler(this.vssDirLabel_DoubleClick);
             // 
             // goButton
             // 
@@ -228,8 +230,8 @@
             // 
             // outputGroupBox
             // 
-            this.outputGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.outputGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.outputGroupBox.Controls.Add(this.forceAnnotatedCheckBox);
             this.outputGroupBox.Controls.Add(this.transcodeCheckBox);
             this.outputGroupBox.Controls.Add(this.domainTextBox);
@@ -271,8 +273,8 @@
             // 
             // domainTextBox
             // 
-            this.domainTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.domainTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.domainTextBox.Location = new System.Drawing.Point(81, 45);
             this.domainTextBox.Name = "domainTextBox";
             this.domainTextBox.Size = new System.Drawing.Size(473, 20);
@@ -289,8 +291,8 @@
             // 
             // outDirTextBox
             // 
-            this.outDirTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.outDirTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.outDirTextBox.Location = new System.Drawing.Point(81, 19);
             this.outDirTextBox.Name = "outDirTextBox";
             this.outDirTextBox.Size = new System.Drawing.Size(473, 20);
@@ -299,16 +301,18 @@
             // outDirLabel
             // 
             this.outDirLabel.AutoSize = true;
+            this.outDirLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.outDirLabel.Location = new System.Drawing.Point(6, 22);
             this.outDirLabel.Name = "outDirLabel";
             this.outDirLabel.Size = new System.Drawing.Size(49, 13);
             this.outDirLabel.TabIndex = 0;
             this.outDirLabel.Text = "Directory";
+            this.outDirLabel.DoubleClick += new System.EventHandler(this.outDirLabel_DoubleClick);
             // 
             // logTextBox
             // 
-            this.logTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.logTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.logTextBox.Location = new System.Drawing.Point(81, 71);
             this.logTextBox.Name = "logTextBox";
             this.logTextBox.Size = new System.Drawing.Size(473, 20);
@@ -427,9 +431,9 @@
             this.MinimumSize = new System.Drawing.Size(458, 419);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VSS2Git";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Text = "VSS2Git **FORKED VERSION**";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.vssGroupBox.ResumeLayout(false);
             this.vssGroupBox.PerformLayout();
             this.statusStrip.ResumeLayout(false);
